@@ -1,27 +1,18 @@
-.page-authorization {
-  height: 100%;
-}
-.page-authorization-container {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: bisque;
-}
+/* Error: This at-rule is not allowed here.
+ *    ,
+ * 12 |     }@else if($media == middle) {
+ *    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   mixin\_adaptive.scss 12:6  @import
+ *   style.scss 1:9             root stylesheet */
 
-html {
-  height: 100%;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: This at-rule is not allowed here.\a    \2577 \a 12 \2502      }@else if($media == middle) {\d\a    \2502       ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   mixin\\_adaptive.scss 12:6  @import\a   style.scss 1:9             root stylesheet";
 }
-html * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Roboto Light", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-}
-html body {
-  height: 100%;
-}
-
-/*# sourceMappingURL=style.css.map */
