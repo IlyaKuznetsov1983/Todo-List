@@ -1,6 +1,27 @@
+.page-authorization {
+  height: 100%;
+}
+.page-authorization-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+html {
+  height: 100%;
+}
 html * {
-  border: 1px solid black;
-  color: red;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+html body {
+  height: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

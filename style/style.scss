@@ -1,6 +1,16 @@
+@import "pages/authorization";
+
 html {
+  height: 100%;
   & * {
-    border: 1px solid black;
-    color: red;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Light", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+  }
+  & body {
+    height: 100%;
   }
 }
