@@ -1,18 +1,99 @@
-/* Error: This at-rule is not allowed here.
- *    ,
- * 12 |     }@else if($media == middle) {
- *    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   mixin\_adaptive.scss 12:6  @import
- *   style.scss 1:9             root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: This at-rule is not allowed here.\a    \2577 \a 12 \2502      }@else if($media == middle) {\d\a    \2502       ^^^^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   mixin\\_adaptive.scss 12:6  @import\a   style.scss 1:9             root stylesheet";
+.form {
+  border: 1px solid black;
 }
+.form-container {
+  padding: 10px 25px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 2px solid #7a7a7a;
+  border-radius: 5%;
+  background-color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+  .form-container {
+    max-width: 430px;
+  }
+}
+.form__title {
+  color: #7a7a7a;
+  font-size: 3rem;
+  padding: 10px;
+  font-weight: 700;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .form__title {
+    font-size: 2.5rem;
+  }
+}
+.form__field {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.form__field-label {
+  color: #99befa;
+  font-size: 2.3rem;
+  text-align: start;
+  align-self: flex-start;
+}
+@media screen and (max-width: 768px) {
+  .form__field-label {
+    font-size: 1.8rem;
+  }
+}
+.form__field-input {
+  color: black;
+  font-size: 2.3rem;
+  height: 50px;
+  width: 100%;
+  border: 1.5px solid rgba(192, 192, 191, 0.5411764706);
+  border-radius: 15px;
+  padding: 0 10px;
+}
+@media screen and (max-width: 768px) {
+  .form__field-input {
+    font-size: 1.8rem;
+  }
+}
+.form__field-input:focus {
+  outline: none;
+  box-shadow: 0 0px 4px 1px #99befa;
+}
+.form__field-input::placeholder {
+  color: rgba(192, 192, 191, 0.5411764706);
+  font-size: 1.8rem;
+}
+@media screen and (max-width: 768px) {
+  .form__field-input::placeholder {
+    font-size: 1.4rem;
+  }
+}
+
+.page-authorization {
+  height: 100%;
+}
+.page-authorization-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: bisque;
+}
+
+html {
+  height: 100%;
+}
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Light", sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+}
+html body {
+  height: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

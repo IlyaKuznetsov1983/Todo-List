@@ -6,16 +6,15 @@
       @content;
     }
   }@else if($media == middle) {
-    @media screen and (max-width: $middle){
+    @media screen and (max-width: $middle) {
       @content;
-
+    }
     }@else if($media == middle) {
 
-  }
     @media screen and (max-width: $mobile){
       @content;
 
 
-  }
+    }
   }
 }

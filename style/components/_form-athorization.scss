@@ -67,6 +67,7 @@
 
       @include respond-to(mobile) {
         font-size: $text-mobile;
+        height: 35px;
       }
 
       &:focus {
@@ -77,6 +78,7 @@
       &::placeholder {
         color: #c0c0bf8a;
         font-size: $sub-text-large;
+
         @include respond-to(middle) {
           font-size: $sub-text-middle;
         }
