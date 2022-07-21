@@ -1,6 +1,8 @@
 @import "mixin/adaptive";
 @import "constants/font-size";
+@import "components/button";
 @import "pages/authorization";
+
 
 
 html {
@@ -16,4 +18,8 @@ html {
   & body {
     height: 100%;
   }
+}
+
+.hide {
+  display: none;
 }

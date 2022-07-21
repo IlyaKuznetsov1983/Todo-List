@@ -18,3 +18,10 @@
     }
   }
 }
+
+////$maxWidth: 1280;
+////@mixin adaptive-width($pcWidth, $mobWidth) {
+////  $addWidth: $pcWidth -$modWidth;
+////  $maxWidth: $maxWidth - 320;
+////  width: calc(#{$mobWidth + px} + #{$addWidth} * ((100vw - 320px) / #{maxWidth}));
+//}
