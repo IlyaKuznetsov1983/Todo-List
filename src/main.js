@@ -1,4 +1,5 @@
+import {PageAuthorizationComponent} from "./component/page-authorization.js";
 
-import pageAuthorization from "./component/page-authorization.js";
+const login = new PageAuthorizationComponent('login')
 
-const login = new pageAuthorizationComponent('login')
+console.log(login)
