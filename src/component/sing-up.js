@@ -9,19 +9,37 @@ export class SingUpComponent extends Component {
     init() {
         this.component.addEventListener('submit', onSubmitHandler.bind(this))
         this.formData = new Form(this.component, {
-            name:'',
-            email: '',
-            password: '',
+            name:[required],
+            email: [ required,isEmailValid],
+            password: [required]
         })
+
+
     }
 }
 
 
 function  onSubmitHandler(e) {
     e.preventDefault()
-    const formData = {
-        ...this.form.value
+    if (this.formData.isValid()) {
+        const formData = {
+            ...this.form.value()
+        }
+        console.log(formData)
     }
-    console.log(formData)
 
+}
+
+function required(value = ''){
+    return value && value.trim()
+}
+
+function isEmailValid(value = '') {
+    const array = value.trim().split('')
+    for (let i = 0; i < array.length; i++) {
+    if(array[i] === ' ') return false
+    }
+    if (!value.includes('@')) return false
+
+    return value.trim()
 }
