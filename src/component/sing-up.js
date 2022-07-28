@@ -43,3 +43,31 @@ function isEmailValid(value = '') {
 
     return value.trim()
 }
+
+function isPasswordValid(value = '') {
+    const counter = {
+        letter: 0,
+        digit: 0,
+        upperCaseLetter:0
+    }
+
+    const array = value.split('')
+    array.forEach(symbol => {
+        if (typeof symbol === 'string' && !isFinite(symbol)) {
+            counter.letter++
+        }
+        if (isFinite(symbol)) {
+            if(symbol !== ' '){
+                counter.digit++
+            }
+        }
+        if (!isFinite((symbol) && symbol === symbol.toUpperCase()) {
+            counter.upperCaseLetter++
+        }
+     }
+    )
+            for (let key in counter) {
+            if (counter[key] === 0) return false
+            }
+        return value
+}

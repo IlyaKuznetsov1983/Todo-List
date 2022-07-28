@@ -87,6 +87,23 @@
         }
       }
     }
+
+    &.invalid {
+      .form__field-label {
+        color: #56221e;
+
+      }
+
+      .form__field-input {
+       border: 1.5px solid #99befa;
+        box-shadow: 0 0 10px 1px #56221e;
+      }
+
+      .form__field-warning {
+        color: #56221e;
+        font-size: $sub-text-middle;
+      }
+    }
   }
 
   &__btn {
