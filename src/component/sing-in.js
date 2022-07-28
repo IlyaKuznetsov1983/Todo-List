@@ -1,5 +1,6 @@
 import {Component} from "../core/component.js";
 import {Form} from "../core/form.js";
+import {Validator} from "../core/validators";
 
 export class SingInComponent extends Component {
     constructor(id) {
@@ -8,17 +9,22 @@ export class SingInComponent extends Component {
     init() {
         this.component.addEventListener('submit', onSubmitHandler.bind(this))
         this.formData = new Form(this.component, {
-            name:'',
-            password : ''
+            name: [Validator.required],
+            password : [Validator.required, Validator.isPasswordValid]
         })
 
 
+    }
+
+    onHide(){
+        this.formData.clear()
     }
 }
 
 function onSubmitHandler(e) {
     e.preventDefault()
-    const formdata = {
+    if ( this.formData.isValid())
+    const formData = {
         ...this.formData.value()
     }
     console.log(formdata)

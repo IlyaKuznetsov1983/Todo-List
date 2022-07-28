@@ -1,5 +1,5 @@
-class Validators  {
-constructor() {
+export  class Validator  {
 }
+let a = new Validator(jjj)
 
 }

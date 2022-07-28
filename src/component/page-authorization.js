@@ -29,3 +29,4 @@ function onChangeFormHandler(e) {
     }
 }
 
+export  default PageAuthorizationComponent

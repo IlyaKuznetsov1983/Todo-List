@@ -4,7 +4,14 @@ export class Component {
         this.init()
     }
 
+
     init(){}
+
+    onHide(){
+        hide(){}
+
+        }
+    }
 
     hide(){
         this.component.classList.add('hide')
