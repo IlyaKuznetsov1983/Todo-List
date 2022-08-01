@@ -12,6 +12,7 @@
     color: #56221e;
     text-align: center;
     margin: 0 auto;
+    pointer-events: none;
 
     @include respond-to(middle){
       font-size: $title-middle;
