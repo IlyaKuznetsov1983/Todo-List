@@ -1,22 +1,20 @@
 export class Form {
     constructor(form, controls) {
-        this.form = form
-        this.controls = controls
+        this.form = form;
+        this.controls = controls;
     }
     value(){
         const value = {};
         Object.keys(this.controls).forEach(field => {
-            value[field] = this.form[field].value()
+            value[field] = this.form[field].value
         })
         return value
     }
 
     isValid(){
         let isValidateForm =  true
-
         Object.keys(this.controls).forEach((field) => {
             const validators = this.controls[field]
-
             let isValid = true
             validators.forEach(validator => {
                 isValid = validator(this.form[field].value) && isValid
@@ -49,8 +47,7 @@ function  setNoticeError(input) {
     }
     if (input.getAttribute('name') === 'email') {
         input.insertAdjacentHTML('afterend', setErrorText('Field is required
-        '(at: least: "@" symbol)'
-    ))
+        '(at: least: "@" symbol)'))
 
     }
     if (input.getAttribute('name') === 'password') {

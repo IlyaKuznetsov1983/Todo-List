@@ -1,0 +1,47 @@
+.header{
+  &-container {
+    background-color: gainsboro;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+  &__title {
+    font-size: $title-large;
+    color: #56221e;
+    text-align: center;
+    margin: 0 auto;
+
+    @include respond-to(middle){
+      font-size: $title-middle;
+    }
+
+    @include respond-to(mobile){
+      font-size: $title-mobile;
+    }
+  }
+
+  &__btn {
+    color: black;
+    height: 50px;
+    border-radius: 20px;
+    background-color: white;
+
+
+    &:hover {
+      box-shadow: 0 0px 4px 1px #ffffff;
+    }
+
+    @include respond-to(middle) {
+      font-size: $title-middle;
+      max-width: 130px;
+      height: 40px;
+    }
+
+    @include respond-to(mobile) {
+      font-size: $title-mobile;
+      max-width: 100px;
+      height: 30px;
+    }
+  }}
