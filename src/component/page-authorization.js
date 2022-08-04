@@ -8,8 +8,8 @@ export class PageAuthorizationComponent extends Component {
     }
 
     init() {
-        this.singIn = new SingInComponent('sing-in')
-        this.singUp = new SingUpComponent('sing-up')
+        this.singIn = new SingInComponent('sing-in', this.component)
+        this.singUp = new SingUpComponent('sing-up', this.component)
         this.link = this.component.querySelectorAll('.form__link')
         this.link.forEach(link => {
             link.addEventListener('click', onChangeFormHandler.bind(this))

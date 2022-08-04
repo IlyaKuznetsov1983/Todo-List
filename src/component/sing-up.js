@@ -1,10 +1,12 @@
 import {Component} from "../core/component.js";
 import {Form} from "../core/form.js"
 import {Validator} from "../core/validators";
+import {Storage} from "../core/storage";
 
 export class SingUpComponent extends Component {
-    constructor(id) {
+    constructor(id, page) {
         super(id);
+        this.page
     }
     init() {
         this.component.addEventListener('submit', onSubmitHandler.bind(this))
@@ -26,8 +28,14 @@ function onSubmitHandler(e) {
     e.preventDefault()
     if (this.formData.isValid()) {
         const formData = {
-            ...this.formData.value()
+            ...this.formData.value(),
+            id: new Date().getTime(),
+            todoList: [],
+            theme: 'gray'
         }
-        console.log(formData)
+        this.formData.clear()
+        Storage.createNewUser(formData)
+        this.page.hide()
+        pageApplication.show()
     }
 }
