@@ -16,5 +16,6 @@ export class PageApplication extends Component {
 
 function onLogoutHandler() {
     this.hide()
+    localStorage.setItem('selectedUserId', null)
     this.pageAuthorization.show()
 }

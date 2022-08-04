@@ -34,7 +34,9 @@ function onSubmitHandler(e) {
             theme: 'gray'
         }
         this.formData.clear()
-        Storage.createNewUser(formData)
+        const  userId = Storage.createNewUser(formData)
+        if (!userId) return
+        localStorage.setItem('selectedUserId', userId)
         this.page.hide()
         pageApplication.show()
     }

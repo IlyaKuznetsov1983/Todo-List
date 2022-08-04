@@ -3,10 +3,11 @@
 @import "components/button";
 @import "pages/authorization";
 @import "pages/page-application";
-
+@import "components/notification";
 
 html {
   height: 100%;
+
   & * {
     margin: 0;
     padding: 0;
@@ -21,5 +22,5 @@ html {
 }
 
 .hide {
-  display: none;
+  display: none !important;
 }
