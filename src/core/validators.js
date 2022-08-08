@@ -8,7 +8,7 @@ static isEmailValid(value = ''){
     for (let i=0; i < array.length; i++) {
         if (array[i] === ' ') return false
     }
-    (!value.includes('@')) return false
+    if (!value.includes('@')) return false
 
     return value.trim()
 }

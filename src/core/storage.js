@@ -1,23 +1,24 @@
-import {notification} from "../main";
+import {notification} from "../main.js";
 
 export class Storage {
     static createNewUser(userData) {
         if (!localStorage.getItem('user')) {
             localStorage.setItem('users', JSON.stringify(userData))
 
-        }else {
+        } else {
             if (checkUserExist(userData)) {
                 notification.show('This user already exist')
-
                 return
+            } else {
+
             }
-
-
-            const existUsers
+            const existUsers = JSON.parse(localStorage.getItem('user'))
+            localStorage.setItem('users', JSON.stringify([...existUsers, userData]))
 
 
 
         }
+        notification.show('Account is created')
         return userData.id
     }
 

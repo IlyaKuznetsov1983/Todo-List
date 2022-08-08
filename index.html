@@ -10,7 +10,7 @@
     <title>Todo List</title>
 </head>
 <body>
-<section class="page-authorization " id="login">
+<section class="page-authorization hide" id="login">
     <div class="page-authorization-container">
         <form class="form" id="sing-up">
             <div class="form-container">
@@ -112,6 +112,17 @@
 
  <div id="notification" class="notification hide">
      <span class="notification__text"></span>
+ </div>
+ <div id="create" class="modal">
+     <form class="modal-container">
+         <h2 class="modal__title">Add new</h2>
+         <div class="modal__field">
+             <input type="text" placeholder="Title ..." class="modal__field-input" name="title"/>
+         </div>
+         <div class="modal__field">
+             <textarea placeholder="Description..." class="modal__field-textarea" name="description"/></textarea>
+         </div>
+     </form>
  </div>
 
 <script src="./src/main.js" type="module"></script>
