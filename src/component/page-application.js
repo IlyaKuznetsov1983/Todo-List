@@ -1,5 +1,5 @@
 import {Component} from "../core/component.js";
-import pageAuthorization from "./page-authorization";
+import pageAuthorization from "./page-authorization.js";
 
 export class PageApplication extends Component {
     constructor(id) {

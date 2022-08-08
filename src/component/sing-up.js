@@ -1,7 +1,7 @@
 import {Component} from "../core/component.js";
 import {Form} from "../core/form.js"
-import {Validator} from "../core/validators";
-import {Storage} from "../core/storage";
+import {Validator} from "../core/validators.js";
+import {Storage} from "../core/storage.js";
 
 export class SingUpComponent extends Component {
     constructor(id, page) {

@@ -10,7 +10,7 @@
     <title>Todo List</title>
 </head>
 <body>
-<section class="page-authorization hide" id="login">
+<section class="page-authorization " id="login">
     <div class="page-authorization-container">
         <form class="form" id="sing-up">
             <div class="form-container">
@@ -34,10 +34,10 @@
                 </div>
                 <button class="form__btn btn" type="submit">Accept</button>
             </div>
-               <p class="form__notice">
-                   Wats Up Bro!
-                   <a class="form__link link-in" href="#">Sing-in</a>
-               </p>
+            <p class="form__notice">
+                Wats Up Bro!
+                <a class="form__link link-in" href="#">Sing-in</a>
+            </p>
         </form>
 
         <form class="form hide" id="sing-in">
@@ -83,7 +83,7 @@
             <form class="page-application__form-search form-search" id="search">
                 <div class="form-search__field">
                     <input class="form-search__field-input" type="search" name="title"
-                    placeholder="Search by title..." autocomplete="off"
+                           placeholder="Search by title..." autocomplete="off"
                     />
                 </div>
                 <div class="form-search__field">
@@ -95,59 +95,81 @@
                 </div>
 
             </form>
-            <div class="page-application__todos todos"...>
-            <div class="todos-container"></div>
+            <div class="page-application__todos todos" ...>
+                <div class="todos-container">
+
+                </div>
+                <div class="todos__item todos__item_done">
+                    <div class="todos__item-status"></div>
+                    <p class="todos__item-title">название таски</p>
+                    <div class="todos__item-edit"></div>
+                    <div class="todos__item-remove"></div>
+                </div>
             </div>
             <div class="page-application__theme theme">
-            <div class="theme__field">
-                <select class="form-search__field-select" name="status">
-                    <option class="theme__field-select" value="gray">Gray</option>
-                    <option class="theme__field-select-option" value="yellow">Yellow</option>
-                    <option class="theme__field-select-option" value="red">Red</option>
-                </select>
+                <div class="theme__field">
+                    <select class="form-search__field-select" name="status">
+                        <option class="theme__field-select" value="gray">Gray</option>
+                        <option class="theme__field-select-option" value="yellow">Yellow</option>
+                        <option class="theme__field-select-option" value="red">Red</option>
+                    </select>
+                </div>
+                <button class="page-application__btn btn"></button>
             </div>
-            <button class="page-application__btn btn"></button>
+        </div>
     </main>
 </section>
 
- <div id="notification" class="notification hide">
-     <span class="notification__text"></span>
- </div>
+<div id="notification" class="notification hide">
+    <span class="notification__text"></span>
+</div>
 
 
- <div id="create" class="modal hide">
-     <form class="modal-container">
-         <h2 class="modal__title">Add new</h2>
-         <div class="modal__field">
-             <input type="text" placeholder="Title ..." class="modal__field-input" name="title"/>
-         </div>
-         <div class="modal__field">
-             <textarea placeholder="Description..." class="modal__field-textarea" name="description"/></textarea>
-         </div>
-         <button class="modal_btn btn" type="submit">Add</button>
-
-         <div id="edit" class="modal">
-             <form class="modal-container">
-                 <h2 class="modal__title">Edit</h2>
-                 <div class="modal__field">
-                     <input type="text" placeholder="Title ..." class="modal__field-input" name="title"/>
-                 </div>
-                 <div class="modal__field">
-                     <textarea placeholder="Description..." class="modal__field-textarea" name="description"/></textarea>
-                 </div>
-                 <button class="modal_btn btn" type="submit">Save</button>
-             </form>
-         </div>
-     </form>
- </div>
-
-    <div id="info" class="modal ">
-       <div class="modal-container-info">
-          <h2 class="modal__title">название задачи</h2>
+<div id="create" class="modal hide">
+    <form class="modal-container">
+        <h2 class="modal__title">Add new</h2>
         <div class="modal__field">
-     <p class="modal__description">Описание задачи</p>
-    <button class="modal_btn btn" type="submit">Save</button>
-  </div>
+            <input type="text" placeholder="Title ..." class="modal__field-input" name="title"/>
+        </div>
+        <div class="modal__field">
+            <textarea placeholder="Description..." class="modal__field-textarea" name="description"/></textarea>
+        </div>
+        <button class="modal_btn btn" type="submit">Add</button>
+
+        <div id="edit" class="modal">
+            <form class="modal-container">
+                <h2 class="modal__title">Edit</h2>
+                <div class="modal__field">
+                    <input type="text" placeholder="Title ..." class="modal__field-input" name="title"/>
+                </div>
+                <div class="modal__field">
+                    <textarea placeholder="Description..." class="modal__field-textarea" name="description"/></textarea>
+                </div>
+                <button class="modal_btn btn" type="submit">Save</button>
+            </form>
+        </div>
+    </form>
+</div>
+
+<div id="info" class="modal hide">
+    <div class="modal-container modal-container-info">
+        <h2 class="modal__title">название задачи</h2>
+        <p class="modal__description">Описание задачи</p>
+        <button class="modal_btn btn" type="submit">Save</button>
+    </div>
+</div>
+
+<div id="confirm" class="modal hide">
+    <div class="modal-container modal-container-confirm">
+        <h2 class="modal__notice">gfgjfgjfgjjfgjg
+            <span class="modal__notice-name">название задачи</span>
+            fgfnfgnfnfgn
+        </h2>
+        <div class="modal__actions">
+            <button class="modal_btn btn_agree btn" type="submit">ys</button>
+            <button class="modal_btn btn_disagree btn" type="submit">no</button>
+        </div>
+    </div>
 </div>
 
 <script src="./src/main.js" type="module"></script>

@@ -1,12 +1,10 @@
-/* Error: Undefined variable.
- *    ,
- * 85 |         font-size: $text-text-middle;
- *    |                    ^^^^^^^^^^^^^^^^^
- *    '
- *   components\_modal.scss 85:20  @content
- *   mixin\_adaptive.scss 10:7     respond-to()
- *   components\_modal.scss 84:7   @import
- *   style.scss 7:9                root stylesheet */
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 4 | @import "../components/todos";
+ *   |         ^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   pages\_page-application.scss 4:9  @import
+ *   style.scss 5:9                    root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -16,5 +14,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 85 \2502          font-size: $text-text-middle;\d\a    \2502                     ^^^^^^^^^^^^^^^^^\a    \2575 \a   components\\_modal.scss 85:20  @content\a   mixin\\_adaptive.scss 10:7     respond-to()\a   components\\_modal.scss 84:7   @import\a   style.scss 7:9                root stylesheet";
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 4 \2502  @import \"../components/todos\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   pages\\_page-application.scss 4:9  @import\a   style.scss 5:9                    root stylesheet";
 }

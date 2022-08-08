@@ -1,7 +1,7 @@
 import {Component} from "../core/component.js";
 import {Form} from "../core/form.js";
-import {Validator} from "../core/validators";
-import {Storage} from "../core/storage";
+import {Validator} from "../core/validators.js";
+import {Storage} from "../core/storage.js";
 import {pageApplication} from "../main.js";
 
 export class SingInComponent extends Component {
@@ -31,7 +31,7 @@ function onSubmitHandler(e) {
     }
 
     this.formData.clear();
-    const userId = Storage.enterTodoList(formdata)
+    const userId = Storage.enterTodoList(formData)
     if (!userId) return;
     localStorage.setItem('selectedUserId', userId)
     this.page.hide()

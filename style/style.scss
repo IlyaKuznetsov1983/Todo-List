@@ -1,5 +1,5 @@
-@import "mixin/adaptive";
 @import "constants/font-size";
+@import "mixin/adaptive";
 @import "components/button";
 @import "pages/authorization";
 @import "pages/page-application";
@@ -17,6 +17,7 @@ html {
     font-size: 10px;
     font-weight: 400;
   }
+
   & body {
     height: 100%;
   }
