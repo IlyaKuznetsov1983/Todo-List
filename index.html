@@ -113,7 +113,9 @@
  <div id="notification" class="notification hide">
      <span class="notification__text"></span>
  </div>
- <div id="create" class="modal">
+
+
+ <div id="create" class="modal hide">
      <form class="modal-container">
          <h2 class="modal__title">Add new</h2>
          <div class="modal__field">
@@ -122,8 +124,31 @@
          <div class="modal__field">
              <textarea placeholder="Description..." class="modal__field-textarea" name="description"/></textarea>
          </div>
+         <button class="modal_btn btn" type="submit">Add</button>
+
+         <div id="edit" class="modal">
+             <form class="modal-container">
+                 <h2 class="modal__title">Edit</h2>
+                 <div class="modal__field">
+                     <input type="text" placeholder="Title ..." class="modal__field-input" name="title"/>
+                 </div>
+                 <div class="modal__field">
+                     <textarea placeholder="Description..." class="modal__field-textarea" name="description"/></textarea>
+                 </div>
+                 <button class="modal_btn btn" type="submit">Save</button>
+             </form>
+         </div>
      </form>
  </div>
+
+    <div id="info" class="modal ">
+       <div class="modal-container-info">
+          <h2 class="modal__title">название задачи</h2>
+        <div class="modal__field">
+     <p class="modal__description">Описание задачи</p>
+    <button class="modal_btn btn" type="submit">Save</button>
+  </div>
+</div>
 
 <script src="./src/main.js" type="module"></script>
 </body>
