@@ -14,8 +14,10 @@ export class Component {
 
     hide(){
         this.component.classList.add('hide')
+        this.hide()
     }
     show() {
         this.component.classList.remove('hide')
+        this.onShow()
     }
 }

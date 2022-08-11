@@ -2,23 +2,25 @@ import {Component} from "../core/component.js";
 import {Form} from "../core/form.js"
 import {Validator} from "../core/validators.js";
 import {Storage} from "../core/storage.js";
+import {pageApplication} from "../main.js";
 
 export class SingUpComponent extends Component {
-    constructor(id, page) {
+    constructor(id, pageAuthorization) {
         super(id);
-        this.page
+        this.pageAuthorization = pageAuthorization
     }
+
     init() {
         this.component.addEventListener('submit', onSubmitHandler.bind(this))
         this.formData = new Form(this.component, {
-            name:[Validator.required],
-            email: [ Validator.required, Validator.isEmailValid],
+            name: [Validator.required],
+            email: [Validator.required, Validator.isEmailValid],
             password: [Validator.required, Validator.isPasswordValid]
         })
 
     }
 
-    onHide(){
+    onHide() {
         this.formData.clear()
     }
 
@@ -34,7 +36,7 @@ function onSubmitHandler(e) {
             theme: 'gray'
         }
         this.formData.clear()
-        const  userId = Storage.createNewUser(formData)
+        const userId = Storage.createNewUser(formData)
         if (!userId) return
         localStorage.setItem('selectedUserId', userId)
         this.page.hide()

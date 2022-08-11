@@ -48,63 +48,68 @@
         font-size: $sub-text-mobile;
       }
     }
-  }
 
-  &-status,
-  &-edit,
-  &-remove {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    &-status,
+    &-edit,
+    &-remove {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
 
 
-    &:hover {
-      transform: scale(1.1)
+      &:hover {
+        transform: scale(1.1)
+      }
     }
-  ;
+
+    @include respond-to(middle) {
+      width: 30px;
+      height: 30px;
+    }
+
+    @include respond-to(mobile) {
+      width: 20px;
+      height: 20px;
+
+    }
   }
 
-  @include respond-to(middle) {
-    width: 30px;
-    height: 30px;
+  &-status {
+    background-image: url("./../../assets/1828743.png");
+    background-color: #99befa;
   }
 
-  @include respond-to(mobile) {
-    width: 20px;
-    height: 20px;
-
-   }
- }
-   &-status {
-     background-image: url("./../../assets/1828743.png");
-     background-color: #99befa;
-  }
   &-edit {
-     background-image: url("./../../assets/1402.png");
+    background-image: url("./../../assets/1402.png");
     visibility: hidden;
   }
+
   &-remove {
-  background-image: url("./../../assets/8068809.png");
+    background-image: url("./../../assets/8068809.png");
     visibility: hidden;
-}
+  }
 
   &:hover {
     cursor: pointer;
     box-shadow: 0 0px 4px 5px #7a7a7a;
 
     .todos__item-edit,
-    .todos__item-remove{
+    .todos__item-remove {
       visibility: visible;
     }
   }
-   &_done {
-     text-decoration: line-through #000000;
 
-     .todos__item-status {
-       background-color: #f78090;
-     }
-   }
+  &_done {
+    text-decoration: line-through #000000;
+
+    .todos__item-status {
+      background-color: #f78090;
+    }
+  }
+}
+
+
 

@@ -5,7 +5,7 @@ import {Storage} from "../core/storage.js";
 import {pageApplication} from "../main.js";
 
 export class SingInComponent extends Component {
-    constructor(id) {
+    constructor(id, page) {
         super(id);
     }
     init() {

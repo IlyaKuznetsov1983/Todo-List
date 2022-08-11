@@ -40,8 +40,10 @@ export class Form {
 function  setNoticeError(input) {
     clearNoticeError(input)
     input.parentElement.classList.add('invalid')
-
-    if (input.getAttribute('name') === 'name') {
+    console.log(input.name)
+    if (input.getAttribute('name') === 'name' ||
+        input.getAttribute('name') === 'title' ||
+        input.getAttribute('name') === 'description'){
         input.insertAdjacentHTML('afterend', setErrorText('Field is required'))
 
     }
@@ -51,9 +53,8 @@ function  setNoticeError(input) {
 
     }
     if (input.getAttribute('name') === 'password') {
-        input.insertAdjacentHTML('afterend', setErrorText('Field is required '
-        '(at: least: 1  letter , 1 diggit, 1 uppercase letter)'
-    ))
+        input.insertAdjacentHTML('afterend', setErrorText('Field is required
+        (at: least: 1  letter , 1 diggit, 1 uppercase letter)' ))
 
     }
 }
@@ -62,6 +63,9 @@ function  setNoticeError(input) {
             if (input.closest('.form__field')) {
                 input.closest('.form__field').removeChild(input.nextSibling)
                 input.parentElement.classList.add('invalid')
+            } else if (input.closest('.modal__field')) {
+                    input.closest('.modal__field').removeChild(input.nextSibling)
+                    input.parentElement.classList.remove('invalid')
             }
         }
     }

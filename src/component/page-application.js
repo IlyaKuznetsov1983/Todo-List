@@ -1,8 +1,8 @@
 import {Component} from "../core/component.js";
-import pageAuthorization from "./page-authorization.js";
+import {createPostModalForm} from "../main.js";
 
 export class PageApplication extends Component {
-    constructor(id) {
+    constructor(id, pageAuthorization) {
         super(id);
         this.pageAuthorization = pageAuthorization
     }
@@ -10,6 +10,8 @@ export class PageApplication extends Component {
     init() {
         this.logoutBtn = document.getElementById('logout')
         this.logoutBtn.addEventListener('click', onLogoutHandler.bind(this))
+        this.createBtn = document.getElementById('create-btn')
+        this.createBtn.addEventListener('click', onShowFormCreatePostHandler.bind(this))
     }
 }
 
@@ -18,4 +20,8 @@ function onLogoutHandler() {
     this.hide()
     localStorage.setItem('selectedUserId', null)
     this.pageAuthorization.show()
+}
+
+function onShowFormCreatePostHandler(){
+createPostModalForm.show()
 }

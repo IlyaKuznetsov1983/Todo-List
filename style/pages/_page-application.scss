@@ -12,7 +12,6 @@
     padding: 25px;
 
 
-
     @include respond-to(middle) {
       font-size: $sub-text-middle;
       padding: 20px;
@@ -39,35 +38,38 @@
 
 
     @include respond-to(middle) {
-     flex-direction: column;
+      flex-direction: column;
       align-items: center;
-      gap: 10px ;
+      gap: 10px;
 
     }
   }
-&__form-search{
-  margin-left: auto;
-  flex-shrink: 0;
-}
+
+  &__form-search {
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
   &__theme {
     margin-right: auto;
     flex-shrink: 0;
   }
-   &__btn {
-     border: 1px solid red;
-     width: 100px;
-     height: 100px;
-     border-radius: 50%;
-     background-image: url("../../assets/8068809.png");
-     background-repeat: no-repeat;
-     background-position: center;
-     margin: 20px 30px 0 auto;
 
-     @include respond-to(middle) {
-       width: 70px;
-       height: 70px;
+  &__btn {
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-image: url("../../assets/8068809.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 20px 30px 0 auto;
 
-     }
+    @include respond-to(middle) {
+      width: 70px;
+      height: 70px;
 
-   }
+    }
+
+  }
 }

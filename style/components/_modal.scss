@@ -87,7 +87,7 @@
       font-size: $sub-text-large;
 
       @include respond-to(middle) {
-        font-size: $text-text-middle;
+        font-size: $text-middle;
         height: 45px;
       }
 
@@ -122,12 +122,19 @@
         font-size: $sub-text-middle;
 
       }
-
-
     }
-
   }
-
+    &.invalid {
+      .modal__field-input,
+      .modal__field-textarea {
+        border: 1.5px solid #56221e;
+        box-shadow: 0 0px 10px 1px #56221e;
+      }
+      .form__field-warning {
+        color: #56221e;
+        font-size: $sub-text-mobile;
+      }
+    }
 
   &__notice,
   &__notice-name {
