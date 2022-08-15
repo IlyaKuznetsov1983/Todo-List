@@ -52,8 +52,14 @@ export class Storage {
         notification.show('Post created')
     }
 
+    static getUserData() {
+        return findUserData()
+    }
 
-
+ static getTodoInfo(todoId) {
+        const currentUser = findUserData()
+     return currentUser.todoList.find(todo => todo.id === parseInt(todoId)
+ }
 }
 
 
