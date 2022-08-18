@@ -55,7 +55,22 @@ export class Storage {
     static removePost(todoId) {
         const users = JSON.parse(localStorage.getItem('users'))
         const currentUser = findUserData()
-        const updateTodosArray = []
+        const updateTodosArray = currentUser.todoList.filter(todo => {
+            return todo.id != parseInt(todoId)
+        })
+        const updateUser = {
+            ...currentUser,
+            todoList: updateTodosArray
+        }
+        const indexCurrentUser = users.findIndex(user => user.id === currentUser.id)
+        const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)]
+        localStorage.setItem('users', JSON.stringify(updateUsersArray))
+        notification.show('Post removed')
+    }
+
+
+    static editPost(){
+        
     }
 
 

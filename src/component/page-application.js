@@ -1,5 +1,5 @@
 import {Component} from "../core/component.js";
-import {createPostModalForm, todoInfoModal} from "../main.js";
+import {createPostModalForm, formEditPostModal, todoInfoModal} from "../main.js";
 import {renderTodos} from "../template/render-post.js";
 import {Storage} from "../core/storage.js";
 
@@ -42,12 +42,15 @@ function onShowFormCreatePostHandler(){
 
 function onTodoHandler(e) {
     const todoId = this.dataset.todoId
-
     if (e.target.classList.contains('todos__item')){
         todoInfoModal.show(todoId)
     }
      if (e.target.classList.contains('todo__item__remove')){
-         console.log(1)
-         Storage.removePost(todoId)
+         confirmActionModal.show()
+
+     }
+
+     if (e.target.classList.contains('todos__item-edit')) {
+         formEditPostModal.show(todoId)
      }
 }
