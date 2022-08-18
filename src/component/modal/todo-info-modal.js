@@ -11,7 +11,7 @@ export  class TodoInfoModal extends Component {
     }
     onShow(todoId) {
         this.component.innerHTML = ''
-        this.htmlInfo = renderTodoInfo(todoId)
+        this.htmlInfo = renderTodos(todoId)
         this.component.insertAdjacentHTML('afterbegin', this.htmlInfo)
     }
 }

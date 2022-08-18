@@ -5,17 +5,21 @@ export class Component {
     }
 
 
-    init(){}
-
-    onHide(){}
-
-     onShow(){}
-
-
-    hide(){
-        this.component.classList.add('hide')
-        this.hide()
+    init() {
     }
+
+    onHide() {
+    }
+
+    onShow() {
+    }
+
+
+    hide() {
+        this.component.classList.add('hide')
+        this.onHide()
+    }
+
     show(e) {
         this.component.classList.remove('hide')
         this.onShow(e)

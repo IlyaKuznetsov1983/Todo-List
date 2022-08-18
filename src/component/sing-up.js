@@ -14,8 +14,10 @@ export class SingUpComponent extends Component {
         this.component.addEventListener('submit', onSubmitHandler.bind(this))
         this.formData = new Form(this.component, {
             name: [Validator.required],
-            email: [Validator.required, Validator.isEmailValid],
-            password: [Validator.required, Validator.isPasswordValid]
+            // email: [Validator.required, Validator.isEmailValid],
+            email: [Validator.required],
+            // password: [Validator.required, Validator.isPasswordValid]
+            password: [Validator.required]
         })
 
     }
@@ -39,7 +41,7 @@ function onSubmitHandler(e) {
         const userId = Storage.createNewUser(formData)
         if (!userId) return
         localStorage.setItem('selectedUserId', userId)
-        this.page.hide()
+        this.pageAuthorization.hide()
         pageApplication.show()
     }
 }

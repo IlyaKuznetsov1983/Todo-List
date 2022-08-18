@@ -1,6 +1,4 @@
-import {notification} from "../main";
-
-export {notification} from '../main.js'
+import {notification} from "../main.js";
 
 export class Storage {
     static createNewUser(userData) {
@@ -38,28 +36,37 @@ export class Storage {
 
 
     }
-    static createPost(postData){
-          const users = localStorage.getItem('users')
-          const currentUser = findUserData()
+
+    static createPost(postData) {
+        const users = localStorage.getItem('users')
+        const currentUser = findUserData()
         if (!currentUser) return;
         const updateUser = {
             ...currentUser,
             todoList: [...currentUser.todoList, postData]
         }
         const indexCurrentUser = users.findIndex(user => user.id === currentUser.id)
-        const updateUsersArray = [...users.slice(0,indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)]
+        const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser, ...users.slice(indexCurrentUser + 1)]
         localStorage.setItem('users', JSON.stringify(updateUsersArray))
         notification.show('Post created')
     }
+
+
+    static removePost(todoId) {
+        const users = JSON.parse(localStorage.getItem('users'))
+        const currentUser = findUserData()
+        const updateTodosArray = []
+    }
+
 
     static getUserData() {
         return findUserData()
     }
 
- static getTodoInfo(todoId) {
+    static getTodoInfo(todoId) {
         const currentUser = findUserData()
-     return currentUser.todoList.find(todo => todo.id === parseInt(todoId)
- }
+        return currentUser.todoList.find(todo => todo.id === parseInt(todoId))
+    }
 }
 
 

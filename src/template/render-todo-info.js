@@ -1,4 +1,4 @@
-import {Storage} from "../core/storage";
+import {Storage} from "../core/storage.js";
 
 export  const renderTodoInfo = (todoId) => {
     const todo = Storage.getTodoInfo(todoId)

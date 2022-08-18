@@ -38,7 +38,7 @@ function onSubmitPostHandler (e) {
             status: 'processing'
         }
 
-        Storage.createPost()
+        Storage.createPost(formData)
         this.hide()
         pageApplication.show()
     }

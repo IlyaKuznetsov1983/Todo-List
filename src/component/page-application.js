@@ -1,6 +1,7 @@
 import {Component} from "../core/component.js";
 import {createPostModalForm, todoInfoModal} from "../main.js";
 import {renderTodos} from "../template/render-post.js";
+import {Storage} from "../core/storage.js";
 
 export class PageApplication extends Component {
     constructor(id, pageAuthorization) {
@@ -43,7 +44,10 @@ function onTodoHandler(e) {
     const todoId = this.dataset.todoId
 
     if (e.target.classList.contains('todos__item')){
-        todoInfoModal.show()
+        todoInfoModal.show(todoId)
     }
-    todoInfoModal.show(todoId)
+     if (e.target.classList.contains('todo__item__remove')){
+         console.log(1)
+         Storage.removePost(todoId)
+     }
 }
