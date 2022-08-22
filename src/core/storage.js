@@ -3,7 +3,7 @@ import {notification} from "../main.js";
 export class Storage {
     static createNewUser(userData) {
         if (!localStorage.getItem('user')) {
-            localStorage.setItem('users', JSON.stringify(userData))
+            localStorage.setItem('users', JSON.stringify([userData]))
 
         } else {
             if (checkUserExist(userData)) {
@@ -69,8 +69,20 @@ export class Storage {
     }
 
 
-    static editPost(){
-        
+    static editPost(todoId, formData){
+        const users = JSON.parse(localStorage.getItem('users'))
+        const currentUser = findUserData()
+        const indexCurrentUser = users.findIndex((user) => {
+            return user.id === currentUser.id
+        })
+       const indexTodo = currentUser.todoList.findIndex(todo => {
+            return todoId.id === todoId
+        })
+
+        const updateUser = {
+            ...currentUser,
+            todoList: [...currentUser.todoList(0, indexTodo), formData, ...currentUser.todoList.slice(indexTodo + 1)]
+        }
     }
 
 

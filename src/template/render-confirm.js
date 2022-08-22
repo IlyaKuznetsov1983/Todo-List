@@ -15,3 +15,4 @@ export const renderConfirm = (todoId) => {
         </div>
     </div>`
 }
+

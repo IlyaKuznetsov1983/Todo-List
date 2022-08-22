@@ -1,6 +1,6 @@
 import {Component} from "../../core/component.js";
 import {renderConfirm} from "../../template/render-confirm.js";
-import {Storage} from "../../core/storage";
+import {Storage} from "../../core/storage.js";
 import {pageApplication} from "../../main.js";
 
 export class ConfirmActionModal extends Component {

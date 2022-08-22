@@ -36,21 +36,21 @@ function onLogoutHandler() {
     this.pageAuthorization.show()
 }
 
-function onShowFormCreatePostHandler(){
+function onShowFormCreatePostHandler() {
     createPostModalForm.show()
 }
 
 function onTodoHandler(e) {
     const todoId = this.dataset.todoId
-    if (e.target.classList.contains('todos__item')){
+    if (e.target.classList.contains('todos__item')) {
         todoInfoModal.show(todoId)
     }
-     if (e.target.classList.contains('todo__item__remove')){
-         confirmActionModal.show()
+    if (e.target.classList.contains('todo__item__remove')) {
+        confirmActionModal.show()
 
-     }
+    }
 
-     if (e.target.classList.contains('todos__item-edit')) {
-         formEditPostModal.show(todoId)
-     }
+    if (e.target.classList.contains('todos__item-edit')) {
+        formEditPostModal.show(todoId)
+    }
 }

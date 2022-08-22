@@ -1,7 +1,8 @@
 import {Component} from "../../core/component.js";
 import {Storage} from "../../core/storage.js";
-import {Validator} from "../../core/validators";
+import {Validator} from "../../core/validators.js";
 import {pageApplication} from "../../main.js";
+import {Form} from "../../core/form.js";
 
 export class FormEditPostModal extends Component {
     constructor(id) {
