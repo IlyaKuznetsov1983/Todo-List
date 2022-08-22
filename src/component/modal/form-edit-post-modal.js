@@ -25,6 +25,9 @@ export class FormEditPostModal extends Component {
         this.formWrapper.title.value = this.todoData.title
         this.formWrapper.description.value = this.todoData.description
     }
+    onHide() {
+        this.formData.clear()
+    }
 }
 
 function  onSubmitPostHandler(e) {

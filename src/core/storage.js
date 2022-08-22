@@ -83,8 +83,22 @@ export class Storage {
             ...currentUser,
             todoList: [...currentUser.todoList(0, indexTodo), formData, ...currentUser.todoList.slice(indexTodo + 1)]
         }
-    }
 
+        const updateUsersArray = [...users.slice(0, indexCurrentUser), updateUser,
+            ...users.slice(indexCurrentUser + 1)]
+
+        localStorage.setItem('users' , JSON.stringify(updateUsersArray))
+        notification.show('Post changes')
+    }
+    static setTodosStatus(todoId) {
+        const users = JSON.parse(localStorage.getItem('users'));
+        const currentUser = findUserData();
+        const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
+        currentUser.todoList.forEach((todo) =>{
+            if ()
+        })
+        })
+    }
 
     static getUserData() {
         return findUserData()

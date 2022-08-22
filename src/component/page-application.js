@@ -15,6 +15,7 @@ export class PageApplication extends Component {
         this.createBtn = document.getElementById('create-btn')
         this.createBtn.addEventListener('click', onShowFormCreatePostHandler.bind(this))
         this.todoList = document.querySelector('.todos-container')
+        this.welcome = document.getElementById('welcome')
     }
 
     onShow() {
@@ -25,6 +26,7 @@ export class PageApplication extends Component {
         Array.from(this.items).forEach(item => {
             item.addEventListener('click', onTodoHandler)
         })
+        this.welcome.innerText = Storage.getUserData().name
     }
 
 }
@@ -45,12 +47,19 @@ function onTodoHandler(e) {
     if (e.target.classList.contains('todos__item')) {
         todoInfoModal.show(todoId)
     }
-    if (e.target.classList.contains('todo__item__remove')) {
-        confirmActionModal.show()
+    if (e.target.classList.contains('todos__item__remove')) {
+        confirmActionModal.show(todoId)
 
     }
 
     if (e.target.classList.contains('todos__item-edit')) {
         formEditPostModal.show(todoId)
+    }
+    if (e.target.classList.contains('todos__item__status')) {
+        this.classList.toggle('todos__item_done')
+        this.dataset.todoStatus = this.dataset.todoStatus === 'processing' ? 'done':
+            'processing'
+        Storage.setTodosStatus(todoId)
+
     }
 }
