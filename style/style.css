@@ -244,6 +244,24 @@
   font-size: inherit;
 }
 
+.yellow .header-container,
+.yellow .todos__item,
+.yellow .page-application__btn {
+  background-color: #kfdy;
+}
+
+.gray .header-container,
+.gray .todos__item,
+.gray .page-application__btn {
+  background-color: rgba(192, 192, 191, 0.5411764706);
+}
+
+.red .header-container,
+.red .todos__item,
+.red .page-application__btn {
+  background-color: #f78090;
+}
+
 .todos-container {
   width: 100%;
   display: flex;

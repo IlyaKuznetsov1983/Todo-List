@@ -95,12 +95,26 @@ export class Storage {
         const currentUser = findUserData();
         const indexCurrentUser = users.findIndex((user) => user.id === currentUser.id);
         currentUser.todoList.forEach((todo) =>{
-            if ()
+            if (todo.id === parseInt((todoId)){
+                todo.status = todo.status === 'processing'
+            })
         })
         })
     }
 
-    static getUserData() {
+
+    static setTheme(theme)
+      const users = JSON.parse(localStorage.getItem('users'));
+      const currentUser = findUserData();
+      const indexCurrentUser = users.findIndex((user) => {
+          return user.id === currentUser.id
+          })
+     const updateUser = {
+          ...currentUser,
+       theme: theme
+      }
+
+      static getUserData() {
         return findUserData()
     }
 

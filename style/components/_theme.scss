@@ -45,3 +45,26 @@
     }
   }
   }
+.yellow {
+ .header-container,
+   .todos__item,
+  .page-application__btn {
+   background-color: $theme-color_yellow;
+ }
+}
+
+.gray {
+  .header-container,
+  .todos__item,
+  .page-application__btn {
+    background-color: $theme-color_gray;
+  }
+}
+
+.red {
+  .header-container,
+  .todos__item,
+  .page-application__btn {
+    background-color: $theme-color_red;
+  }
+}

@@ -16,11 +16,14 @@ export class PageApplication extends Component {
         this.createBtn.addEventListener('click', onShowFormCreatePostHandler.bind(this))
         this.todoList = document.querySelector('.todos-container')
         this.welcome = document.getElementById('welcome')
+        this.search = new SearchComponent('search')
+        this.theme = new ThemeComponent ('theme', this.component)
     }
 
     onShow() {
         this.todoList.innerHTML = ''
-        const html = renderTodos()
+        this.component.classList.add(this.theme.value())
+        const html = renderTodos(this.search.value())
         this.todoList.insertAdjacentHTML('afterbegin', html)
         this.items = this.todoList.querySelector('.todos__item')
         Array.from(this.items).forEach(item => {
@@ -29,6 +32,10 @@ export class PageApplication extends Component {
         this.welcome.innerText = Storage.getUserData().name
     }
 
+    onHide() {
+        this.search.clear()
+        this.welcome.innerText = ''
+    }
 }
 
 
